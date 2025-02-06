@@ -9,14 +9,21 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JXM0ZFQKW"></script>
   <script>
     console.log("✅ Google Analytics script is running...");  
+
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
+
     gtag('js', new Date());
     gtag('config', 'G-2JXM0ZFQKW', { 'debug_mode': true });
 
-    // Track Page View
+    // Get the current date and time
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString();  // ISO format
+
+    // Track Page View with only date and time
     gtag('event', 'page_view', {
-      page_path: window.location.pathname
+      'page_path': window.location.pathname,
+      'view_date': formattedDate
     });
 
     // Check if Google Analytics is initialized
