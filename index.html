@@ -20,9 +20,14 @@
     const currentDate = new Date();
     const formattedDate = currentDate.toISOString();  // ISO format
 
-    // Track Page View with only date and time
+    // Get the page title and path
+    const pageTitle = document.title;  // Will fetch the title of the current page
+    const pagePath = window.location.pathname;  // Will fetch the path of the current page (e.g., /somepage)
+
+    // Track Page View with additional details
     gtag('event', 'page_view', {
-      'page_path': window.location.pathname,
+      'page_path': pagePath,
+      'page_title': pageTitle,  // Explicitly sending page title
       'view_date': formattedDate
     });
 
