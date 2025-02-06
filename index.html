@@ -3,24 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <title>Power BI Tracker</title>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JXM0ZFQKW"></script>
   <script>
+    console.log("✅ Google Analytics script is running...");  
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-2JXM0ZFQKW');
+    gtag('config', 'G-2JXM0ZFQKW', { 'debug_mode': true });
+
+    // Track Page View
+    gtag('event', 'page_view', {
+      page_path: window.location.pathname
+    });
+
+    // Check if Google Analytics is initialized
+    setTimeout(() => {
+      console.log("🔍 Checking dataLayer:", window.dataLayer);
+    }, 2000);
   </script>
   <!-- End Google Analytics -->
 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Power BI Report Embed -->
-  <iframe title="ملخص-الشركة" width="100%" height="800" 
-          src="https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9" 
-          frameborder="0" allowFullScreen="true"></iframe>
+  <iframe title="ملخص-الشركة"
+          src="https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9"
+          allowFullScreen="true">
+  </iframe>
 
 </body>
 </html>
