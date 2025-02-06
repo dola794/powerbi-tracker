@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power BI Report</title>
+    <title>Welcome to the Dashboard</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,22 +23,57 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        iframe {
-            width: 100%;
-            height: 800px;
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
             border: none;
-            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .link-container {
+            display: none;
+            margin-top: 30px;
+        }
+        .report-link {
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .report-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Power BI Dashboard</h1>
     <div class="container">
-        <!-- Power BI Embed -->
-        <iframe title="ملخص-الشركة" width="1140" height="541.25" 
-            src="https://app.powerbi.com/reportEmbed?reportId=ef8ad69d-d33e-41fc-b8ec-34909b1d4309&autoAuth=true&ctid=c7bcdc63-283c-4998-9594-4553933e4d5b" 
-            frameborder="0" allowFullScreen="true">
-        </iframe>
+        <h1>Welcome to the Dashboard</h1>
+        <p>Click the button below to get the link to the report.</p>
+        <button class="button" onclick="showLink()">Show Report Link</button>
+
+        <!-- Hidden container with the link -->
+        <div class="link-container" id="linkContainer">
+            <h2>Here is the link to the Power BI report:</h2>
+            <a class="report-link" 
+                href="https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9" 
+                target="_blank">
+                View the Power BI Report
+            </a>
+        </div>
     </div>
+
+    <script>
+        function showLink() {
+            // Hide the button and show the link container
+            document.querySelector('button').style.display = 'none';
+            document.getElementById('linkContainer').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
