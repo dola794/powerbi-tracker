@@ -36,44 +36,16 @@
         .button:hover {
             background-color: #45a049;
         }
-        .link-container {
-            display: none;
-            margin-top: 30px;
-        }
-        .report-link {
-            font-size: 18px;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .report-link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the Dashboard</h1>
-        <p>Click the button below to get the link to the report.</p>
-        <button class="button" onclick="showLink()">Show Report Link</button>
-
-        <!-- Hidden container with the link -->
-        <div class="link-container" id="linkContainer">
-            <h2>Here is the link to the Power BI report:</h2>
-            <a class="report-link" 
-                href="https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9" 
-                target="_blank">
-                View the Power BI Report
-            </a>
-        </div>
+        <p>Click the button below to view the report.</p>
+        <!-- Redirecting button to Power BI link -->
+        <button class="button" onclick="window.location.href='https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9'">
+            View Power BI Report
+        </button>
     </div>
-
-    <script>
-        function showLink() {
-            // Hide the button and show the link container
-            document.querySelector('button').style.display = 'none';
-            document.getElementById('linkContainer').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
