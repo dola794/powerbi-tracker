@@ -4,17 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power BI Report</title>
-    
-    <!-- Google Analytics Tracking Code -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=10233509957"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'YOUR_GA_TRACKING_ID');
-    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-   <iframe width="100%" height="800px" src="https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9L" frameborder="0" allowfullscreen></iframe>
+    <h1>Power BI Dashboard</h1>
+    <div class="container">
+        <!-- Power BI Embed -->
+        <iframe 
+            src="https://app.powerbi.com/view?r=eyJrIjoiOWFlNzEzNGYtNWIxNC00ZTAyLThjYTgtNWZkMWUwNTRiZTk3IiwidCI6ImM3YmNkYzYzLTI4M2MtNDk5OC05NTk0LTQ1NTM5MzNlNGQ1YiIsImMiOjl9" 
+            allowFullScreen="true">
+        </iframe>
+    </div>
 </body>
 </html>
